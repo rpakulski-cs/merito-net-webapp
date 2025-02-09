@@ -15,6 +15,12 @@ public class CarController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var carsList = new List<CarViewModel>
+        {
+            new CarViewModel { Name = "Toyota", Type = "Sedan", Color = "Red" },
+            new CarViewModel { Name = "Honda", Type = "SUV", Color = "Blue" },
+            new CarViewModel { Name = "Ford", Type = "Truck", Color = "Black" }
+        };
+        return View(carsList);
     }
 }
